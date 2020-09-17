@@ -22,8 +22,8 @@ private:
 	inline bool ship_is_dead(int& x, int& y);
 	inline void set_first_player(string& setting_player);
 	inline void set_second_player(string& setting_player);
-	int** BattleMapFirstPlayer;
-	int** BattleMapSecondPlayer;
+	int** BattleMapFirstPlayer; // Класс для карты
+	int** BattleMapSecondPlayer; // Класс для карты 
 	string first_player, second_player;
 	uint8_t players_priority;
 };

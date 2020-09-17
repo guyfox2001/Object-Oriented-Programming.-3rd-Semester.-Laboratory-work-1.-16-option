@@ -10,7 +10,7 @@ SeaBattleGame::SeaBattleGame()
 	for (int i = 0; i < SIZE_Y; ++i) {
 		this->BattleMapFirstPlayer[i] = new int[SIZE_X];
 	}
-	uint8_t players_priority;
+	this->players_priority = 1;
 
 }
 
@@ -24,7 +24,7 @@ SeaBattleGame::SeaBattleGame(string player1, string player2)
 	for (int i = 0; i < SIZE_Y; ++i) {
 		this->BattleMapFirstPlayer[i] = new int[SIZE_X];
 	}
-	uint8_t players_priority;
+	this->players_priority = 1;
 
 	this->first_player = player1;
 	this->second_player = player2;
@@ -86,11 +86,50 @@ inline bool SeaBattleGame::hit_to_ship(int& x, int& y)
 	switch (this->players_priority)
 	{
 	case 1:
-		if (this->BattleMapFirstPlayer[x - 1][y - 1] == NULL) return false;
-		else {
-			
+		switch (this->BattleMapFirstPlayer[x - 1][y - 1]) {
+		case NULL: 
+			return false;
+		case FIRST_TYPE: 
+			return true;
+		case SECOND_TYPE: 
+			return true;
+		case THIRD_TYPE: 
+			return true;
+		case FOURTH_TYPE: 
+			return true;
 		}
 	case 2:
-
+		switch (this->BattleMapSecondPlayer[x - 1][y - 1]) {
+		case NULL: 
+			return false;
+		case FIRST_TYPE:
+			return true;
+		case SECOND_TYPE:
+			return true;
+		case THIRD_TYPE:
+			return true;
+		case FOURTH_TYPE:
+			return true;
+		}
 	}
 }
+
+inline bool SeaBattleGame::ship_is_dead(int& x, int& y)
+{
+	switch (this->players_priority)
+	{
+	case 1:
+		switch (this->BattleMapFirstPlayer[x-1][y-1])
+		{
+		case FIRST_TYPE:
+			return true;
+		case SECOND_TYPE:
+
+		}
+		break;
+	case 2:
+
+		break;
+	}
+}
+
