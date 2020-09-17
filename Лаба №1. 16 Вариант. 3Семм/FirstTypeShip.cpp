@@ -24,7 +24,7 @@ inline void FirstTypeShip::rotate_dmg(int& x, int& y)
 			this->COORDS.erase(*IT);
 		}
 	}
-	if (this->COORDS.size() == 0) {
+	if (this->COORDS.empty()) {
 		this->IsAlive = false;
 	}
 }
@@ -38,7 +38,13 @@ inline bool FirstTypeShip::isShoted(int& x, int& y)
 
 FirstTypeShip::FirstTypeShip()
 {
-	
+	this->IsAlive = true;
+}
+
+FirstTypeShip::FirstTypeShip(int& x, int& y)
+{
+	this->COORDS.insert(std::make_pair(x, y));
+	this->IsAlive = true;
 }
 
 FirstTypeShip::~FirstTypeShip()

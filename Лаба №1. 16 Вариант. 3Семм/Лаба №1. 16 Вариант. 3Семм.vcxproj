@@ -143,6 +143,7 @@
     <ClCompile Include="FirstTypeShip.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SeaBattleGame.cpp" />
+    <ClCompile Include="SecondTypeShip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BattleMap.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="header_includes.h" />
     <ClInclude Include="macros.h" />
     <ClInclude Include="SeaBattleGame.h" />
+    <ClInclude Include="SecondTypeShip.h" />
     <ClInclude Include="Ships.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

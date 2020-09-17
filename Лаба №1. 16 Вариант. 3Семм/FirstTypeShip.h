@@ -11,6 +11,7 @@ public:
     inline bool isShoted(int&x, int&y);
 
     FirstTypeShip();
+    FirstTypeShip(int&x, int&y);
     ~FirstTypeShip();
 };
 
